@@ -2,7 +2,7 @@
 
 include "connection.php";
 
-$query=$connection->prepare("SELECT title,img from movies");
+$query=$connection->prepare("SELECT movie_id,title,img from movies");
 $query->execute();
 
 $result=$query->get_result();
