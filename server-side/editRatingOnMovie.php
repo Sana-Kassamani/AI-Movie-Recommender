@@ -1,24 +1,23 @@
 <?php
-
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
-
 include "connection.php";
 
 
 $user_id = $_POST["user_id"];
 $movie_id = $_POST["movie_id"];
-$rating_scale = $_POST["rating_scale"];
+$rating_scale = $_POST["rating_scale"];;
 
 
-$query = $connection->prepare("INSERT INTO ratings (user_id,movie_id,rating_scale) VALUES (?,?,?) ");
-$query->bind_param("iii", $user_id, $movie_id, $rating_scale);
+$query = $connection->prepare("UPDATE ratings SET rating_scale = ? WHERE user_id = ? AND movie_id = ?");
+$query->bind_param("iii", $rating_scale, $user_id, $movie_id);
 
+$query->execute();
 
+$result = $query->affected_rows;
 
-
-if($query-> execute()){
+if($result != 0){
     $query1 = $connection->prepare("UPDATE movies SET avg_rating = (SELECT AVG(rating_scale) FROM ratings WHERE movie_id=$movie_id) WHERE movie_id=$movie_id");
     $query1->execute();
 
@@ -34,10 +33,10 @@ if($query-> execute()){
     } 
 
     echo json_encode([
-        "status" => "Rating added",
+        "status" => "Rating edited",
     ]);
 }else{
     echo json_encode([
-        "status" => "Failed to add rating"
+        "status" => "Failed to edit rating"
     ]);
 }
