@@ -17,7 +17,7 @@ $result = $query->get_result();
 if($result -> num_rows != 0){
     $user = $result->fetch_assoc(); //since 1 row
 
-    $check_pass = password_verify($password, $user["password"]);
+    $check_pass = $password === $user["password"];
     if($check_pass){
         $check_ban = $user["banned"];
         if(!$check_ban){
