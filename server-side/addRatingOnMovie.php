@@ -19,12 +19,25 @@ $query-> execute();
 $result = $query->affected_rows;
 
 if($result != 0){
+    $query1 = $connection->prepare("UPDATE movies SET avg_rating = (SELECT AVG(rating_scale) FROM ratings WHERE movie_id=$movie_id) WHERE movie_id=$movie_id");
+    $query1->execute();
+
+    $result1 = $query1->affected_rows;
+    if($result1 != 0){
+        echo json_encode([
+            "status" => "Average rating of $movie_id updated"
+        ]);
+    }else{
+        echo json_encode([
+            "status" => "Failure to updated average rating"
+        ]);
+    } 
+
     echo json_encode([
         "status" => "Rating added",
-        "message" => "$result added to the ratings table"
     ]);
 }else{
     echo json_encode([
-        "status" => "Failure"
+        "status" => "Failed to add rating"
     ]);
 }
