@@ -1,17 +1,13 @@
 const moviesContainer = document.getElementById("allMovies");
 const movieDetails = document.getElementById("movieDetails");
-
+const chatbotButton = document.getElementById("chatbotButton");
+const bookmarkButton = document.getElementById("bookmarkButton");
 
 function displayALlMovies() {
   fetch("http://localhost/AI-Movie-Recommender/server-side/getAllMovies.php")
     .then(response => response.json())
     .then(data => {
       data.forEach(movieRow => {
-        /*  moviesContainer.innerHTML += `
-                    <div>
-                     <p>${movieRow['title']}</p>
-                     <img src="${movieRow['img']}" ">
-                     </div>`;;*/
 
         const movieElement = document.createElement("div");
 
@@ -29,49 +25,17 @@ function displayALlMovies() {
 
         moviesContainer.appendChild(movieElement);
 
-        movieElement.addEventListener('click', () => {
+        movieElement.addEventListener('click', () => {// to be implemented based on jeanpierre html
           const movie_id = movieRow['movie_id'];
           localStorage.setItem("movie_id", movie_id);
 
-          document.getElementById("allMovies").style.display = 'none'
-          displayMovieDetails();
+          //window.location.href = "./../";
         }
         )
-
-
       });
     });
 }
 
-function displayMovieDetails() {
-  const movie_id = localStorage.getItem('movie_id');
-
-  const formData = new FormData()
-  formData.append("movie_id", movie_id);
-
-  fetch("http://localhost/AI-Movie-Recommender/server-side/getMovieDetails.php",
-    {
-      "method": "POST",
-      body: formData
-    }
-  )
-    .then(response => response.json())
-    .then(data => {
-
-      const details = data['response'];
-      const detailsContainer = document.createElement("div");
-
-      detailsContainer.innerHTML += `
-      <div>
-       <p>${details['title']}</p>
-       <img class="max-width" src="${details['img']}" ">
-       </div>
-       <button>back<button>`;
-      movieDetails.appendChild(detailsContainer);
-
-
-
-    })
-
-}
+chatbotButton.addEventListener('click', () => window.location.href = './chatbot.html');
+bookmarkButton.addEventListener('click', () => window.location.href = './displayBookmarks.html');
 displayALlMovies();
