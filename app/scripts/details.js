@@ -1,6 +1,8 @@
 const stars = document.querySelectorAll(".stars i");
-
+const movieTitle = document.getElementById("movie-title");
+const movieDescription = document.getElementById("movie-description");
 const bookmarkBtn = document.getElementById("bookmark");
+const backBtn = document.getElementById("back-button")
 
 const user_id = 1;
 const movie_id = 1;
@@ -9,7 +11,31 @@ let rating_scale=0;
 //const user_id = localStorage.getItem("user_id")
 //const movie_id = localStorage.getItem("movie_id")
 
+let startTime;
+let elapsedPausedTime = 0;
+let isRunning = false;
+
 fetchMovieDetails()
+window.addEventListener("load", ()=>{
+    startStopwatch();
+
+})
+function startStopwatch(){
+    if(!isRunning){
+        startTime = new Date().getTime();
+        isRunning=true;
+        console.log("Timer started")
+    }
+}
+function stopStopwatch(){
+    if(isRunning){
+        const now = new Date().getTime();
+        elapsedTime = now-startTime;
+        isRunning=false;
+        console.log(`Stopwatch stopped, Total time: ${elapsedTime} ms`);
+    }
+}
+backBtn.addEventListener("click", stopStopwatch);
 function fetchMovieDetails(){
 
     const data = new FormData();
@@ -28,6 +54,8 @@ function fetchMovieDetails(){
     })
 
 }
+
+
 
 bookmarkBtn.addEventListener("click", async () => {
     const data= new FormData();

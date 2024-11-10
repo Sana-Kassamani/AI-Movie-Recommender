@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch Example</title>
+</head>
+<body>
+    <!-- Table Element -->
+    <table id="myTable">
+        <tr><td>Row 1</td></tr>
+        <tr><td>Row 2</td></tr>
+    </table>
+
+    <!-- Stop Button -->
+    <button id="stopButton">Stop Stopwatch</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        let startTime;          // Timestamp when the stopwatch starts
+let elapsedTime = 0;    // Total elapsed time
+let isRunning = false;  // Stopwatch state
+
+// Start the stopwatch
+function startStopwatch() {
+    if (!isRunning) {
+        startTime = new Date().getTime(); // Record the start time
+        isRunning = true; // Set stopwatch to running
+        console.log("Stopwatch started.");
+    }
+}
+
+// Stop the stopwatch and log the elapsed time
+async function stopStopwatch() {
+    if (isRunning) {
+        const now = new Date().getTime();
+        const timeSinceStart = now - startTime; // Calculate elapsed time since last start
+        elapsedTime += timeSinceStart; // Update the total elapsed time
+        isRunning = false; // Stop the stopwatch
+
+        console.log(`Stopwatch stopped. Total time: ${elapsedTime} ms`);
+
+        // Send elapsed time to the server
+        const data = new FormData();
+        data.append("user_id", 1); // Replace with dynamic user_id
+        data.append("movie_id", 1); // Replace with dynamic movie_id
+        data.append("time_spent", elapsedTime / 1000); // Convert ms to seconds
+
+        try {
+            const response = await axios.post("http://localhost/movie_recommenderdb/AI-Movie-Recommender/server-side/updateActivity.php", data);
+            console.log("Server Response:", response.data);
+        } catch (error) {
+            console.error("Error updating time on the server:", error.response?.data || error.message);
+        }
+    }
+}
+
+// Reset the stopwatch
+function resetStopwatch() {
+    elapsedTime = 0; // Reset elapsed time
+    isRunning = false; // Set stopwatch to not running
+    console.log("Stopwatch reset.");
+}
+
+    </script>
+</body>
+</html>
