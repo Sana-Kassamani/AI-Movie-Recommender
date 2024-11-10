@@ -12,13 +12,13 @@ $movie_id = $_POST["movie_id"];
 $rating_scale = $_POST["rating_scale"];
 
 
-$query = $connection->prepare("INSERT INTO ratings (user_id,movie_id,rating_scale) VALUES (?,?,?) ");
-$query->bind_param("iii", $user_id, $movie_id, $rating_scale);
+$query = $connection->prepare("INSERT INTO ratings (user_id,movie_id,rating_scale) VALUES (?,?,?) ON DUPLICATE KEY UPDATE user_id=?, movie_id=?, rating_scale=?");
+$query->bind_param("iiiiii", $user_id, $movie_id, $rating_scale, $user_id, $movie_id, $rating_scale);
+$query-> execute();
 
+$result = $query->affected_rows;
 
-
-
-if($query-> execute()){
+if($result != 0){
     $query1 = $connection->prepare("UPDATE movies SET avg_rating = (SELECT AVG(rating_scale) FROM ratings WHERE movie_id=$movie_id) WHERE movie_id=$movie_id");
     $query1->execute();
 
