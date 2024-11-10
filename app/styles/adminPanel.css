@@ -1,0 +1,30 @@
+.all-users {
+  gap: 20px;
+  font-size: large;
+}
+.user {
+  border: 2px solid grey;
+}
+.ban-btn,
+.unban-btn {
+  border-color: transparent;
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  color: rgb(59, 58, 58);
+  font-weight: bold;
+}
+.ban-btn:hover,
+.unban-btn:hover {
+  opacity: 0.7;
+}
+.ban-btn {
+  background-color: rgba(197, 48, 48, 0.751);
+}
+.unban-btn {
+  background-color: rgba(27, 191, 136, 0.658);
+}
+.ban-btn:disabled,
+.unban-btn:disabled {
+  background-color: rgba(54, 50, 50, 0.589);
+}
