@@ -8,7 +8,7 @@ include "connection.php";
 $movie_id=$_POST['movie_id']??NULL;
 if($movie_id==NULL)
 {
-  $query=$connection->prepare("SELECT movie_id,title,img from movies");
+  $query=$connection->prepare("SELECT movie_id,title,image_src from movies");
   $query->execute();
 
   $result=$query->get_result();
@@ -48,5 +48,5 @@ else {
       "message" => "Not Found"
     ]);
   }
-} 
+}
 ?>
