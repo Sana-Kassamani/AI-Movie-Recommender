@@ -26,7 +26,6 @@ if ($select_result->num_rows > 0) {
         "message" => "user $user_id has prev activity on movie $movie_id",
     ]);
 } else {
-    // Return default values if no row exists
     echo json_encode([
         "message" => "1st time activity",
     ]);
