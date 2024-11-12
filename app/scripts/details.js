@@ -13,12 +13,16 @@ let rating_scale=0;
 
 fetchMovieDetails()
 
+
 let startTime; 
 let elapsedTime = 0; 
 let isRunning = false; 
+let isBookmarked;
 
 window.addEventListener("load", () => {
     startStopwatch();
+    isBookmarkedFXN();
+
 });
 
 function startStopwatch() {
@@ -80,37 +84,66 @@ function fetchMovieDetails(){
 
 }
 
-
-let isBookmarked = false;
-bookmarkBtn.addEventListener("click", async () => {
-    const data= new FormData();
-
+function isBookmarkedFXN() {
+    const data = new FormData();
     data.append("user_id", user_id);
     data.append("movie_id", movie_id);
-    if (!isBookmarked){
-        const response = await axios
-        ("http://localhost/AI-Movie-Recommender/server-side/insertToBookmark.php",
-            {
-                method: "POST",
-                data:data,
-        }).then((response) => {
-            console.log("Bookmark added: ", response.data)
-            isBookmarked=true;
-            bookmarkBtn.textContent="un-Bookmark"
-        }).catch(()=>console.log("Error Bookmarking"))
-}   else{
-    const response = await axios
-    ("http://localhost/AI-Movie-Recommender/server-side/unBookmark.php",
-        {
-        method:"POST",
-        data:data,
-    }).then((response)=>{
-        console.log("Bookmark removed")
-        isBookmarked=false;
-        bookmarkBtn.textContent("Bookmark");
-    }).catch(()=> console.log("Error unBookmarking"))
+
+    axios("http://localhost/AI-Movie-Recommender/server-side/checkBookmark.php", {
+        method: "POST",
+        data: data,
+    })
+        .then((response) => {
+            if (response.data.status === true) {
+                bookmarkBtn.textContent = "un-Bookmark";
+                isBookmarked = true;
+            } else {
+                bookmarkBtn.textContent = "Bookmark";
+                isBookmarked = false;
+            }
+        })
+        .catch(() => {
+            console.log("Error checking if bookmarked or not");
+        });
 }
-})
+
+// Add event listener to the button
+bookmarkBtn.addEventListener("click", async () => {
+    const data = new FormData();
+    data.append("user_id", user_id);
+    data.append("movie_id", movie_id);
+
+    if (!isBookmarked) {
+        await axios("http://localhost/AI-Movie-Recommender/server-side/insertToBookmark.php", {
+            method: "POST",
+            data: data,
+        })
+            .then((response) => {
+                console.log("Bookmark added: ", response.data);
+                isBookmarked = true;
+                bookmarkBtn.textContent = "Unbookmark";
+            })
+            .catch(() => {
+                console.log("Error bookmarking");
+            });
+    } else {
+        await axios("http://localhost/AI-Movie-Recommender/server-side/unBookmark.php", {
+            method: "POST",
+            data: data,
+        })
+            .then((response) => {
+                console.log("Bookmark removed");
+                isBookmarked = false;
+                bookmarkBtn.textContent = "Bookmark";
+            })
+            .catch(() => {
+                console.log("Error unbookmarking");
+            });
+    }
+});
+
+
+
 
 
 

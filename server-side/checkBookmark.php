@@ -13,12 +13,12 @@ $query = $connection->prepare("SELECT * FROM BOOKMARKS WHERE user_id=? AND movie
 $query->bind_param("ii", $user_id,$movie_id);
 $query->execute();
 
-$result = $query->affected_rows;
+$result = $query->get_result();
 
-if($result != 0){
+if($result->num_rows > 0){
     echo json_encode([
         "status" => true,
-        "message" => "$result added to bookmarks table"
+        "message" => "exists/already bookmarked"
     ]);
 }else{
     echo json_encode([
