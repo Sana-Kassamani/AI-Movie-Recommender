@@ -3,7 +3,12 @@
   justify-content: space-around;
 }
 
+.column {
+  flex-direction: column;
+}
+.align-center {
+  align-items: center;
+}
 .max-width {
-
   max-width: 50vh;
 }

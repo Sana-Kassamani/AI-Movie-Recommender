@@ -15,7 +15,7 @@ function displayALlMovies() {
         title.innerHTML = movieRow['title'];
 
         const movieImage = document.createElement("img");
-        movieImage.src = movieRow['img'];
+        movieImage.src = movieRow['image_src'];
         movieImage.className = "max-width";
 
 
