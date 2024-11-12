@@ -29,15 +29,13 @@ $query->bind_param("i",$user_id);
 $query->execute();
 
 $result = $query->get_result();
+$array=[];
 if($result){
-    $array=[];
+    
     while($movie = $result->fetch_assoc())
     {
         $array[]= $movie;
     }
-    echo json_encode([
-        "movies"=>$array,
-    ]);
 }
 else{
     echo json_encode([

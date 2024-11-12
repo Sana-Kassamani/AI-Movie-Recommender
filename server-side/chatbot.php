@@ -1,5 +1,6 @@
 <?php
-
+include "getUsersActivity.php";
+include "getAllMovies.php";
 // OpenAI API endpoint
 $url = "https://api.openai.com/v1/chat/completions";
 
