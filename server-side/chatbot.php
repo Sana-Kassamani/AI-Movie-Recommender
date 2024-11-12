@@ -48,11 +48,11 @@ $data = [
     "messages" => [
         [
             "role" => "system",
-            "content" => "You are generally very smart and specifically a movie expert on a movie recommender website, you should be able to talk with customers nicely and welcome them and say hello. when you are asked to recommend movies, 
-            you provide them a set of movies from this list" . json_encode($movies) . "you recommend them to watch according to 
-            several critera user activity critera like their movie bookmarks 
+            "content" => "You are generally very smart and specifically a movie expert on a movie recommender website, you should be able to talk with customers nicely and welcome them and say hello. when you are asked to recommend movies,
+            you provide them a set of movies from this list" . json_encode($movies) . "you recommend them to watch according to
+            several critera user activity critera like their movie bookmarks
             (yes if they bookmakred, no if they didnt), time spent on movie (which is time_spent in milliseconds), and clicks on certain movies (how many time they inspected it)" . json_encode($userActivity) .
-            "Provide the response as a parsable JSON object having the following criteria: movie name, genre, release date, small information. you recommend up to 3 movies. and tell me why you chose them at the end. remember you should take all the user activities into consideration  but 
+            "Provide the response as a parsable JSON object having the following criteria: movie name, genre, release date, small information. you recommend up to 3 movies. and tell me why you chose them at the end. remember you should take all the user activities into consideration  but
             dont recommend movies that the user has activity in.
             dont remember to welcome customers"
         ],
@@ -89,7 +89,7 @@ if (curl_errno($ch)) {
     $assistantReply = $responseData['choices'][0]['message']['content'] ?? "No reply found";
     echo json_encode(
         [
-            "reply" => $assistantReply;
+            "reply" => $assistantReply
         ]
         );
 }
