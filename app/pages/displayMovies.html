@@ -6,13 +6,29 @@
   <body>
     <div>
       <button id="chatbotButton">chatbot</button>
-      <select name="genre" >
-        <option value="action">action</option>
-        <option value="comedy">comedy</option>
+      <select name="genre" id="genre" >
+        <option value="actionGenre">action</option>
+        <option value="comedyGenre">comedy</option>
       </select>
    <button id="bookmarkButton">Bookmarks</button>
     </div>
     <section id="allMovies" class="flex"> </section>
+    <div id="moviesContainer">
+      <h2>Movies by Genre</h2>
+
+      <div id="actionGenre" class="genre-section flex">
+          <h3>Action</h3>
+      </div>
+
+      <div id="comedyGenre" class="genre-section flex">
+          <h3>Comedy</h3>
+
+      </div>
+
+      <div id="dramaGenre" class="genre-section flex">
+          <h3>Drama</h3>
+      </div>
+  </div>
 
     <script src="./../scripts/displayMovies.js"></script>
 
