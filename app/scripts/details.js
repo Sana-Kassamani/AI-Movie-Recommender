@@ -11,31 +11,55 @@ let rating_scale=0;
 //const user_id = localStorage.getItem("user_id")
 //const movie_id = localStorage.getItem("movie_id")
 
-let startTime;
-let elapsedPausedTime = 0;
-let isRunning = false;
-
 fetchMovieDetails()
-window.addEventListener("load", ()=>{
-    startStopwatch();
 
-})
-function startStopwatch(){
-    if(!isRunning){
-        startTime = new Date().getTime();
-        isRunning=true;
-        console.log("Timer started")
-    }
+let startTime; 
+let elapsedTime = 0; 
+let isRunning = false; 
+
+window.addEventListener("load", () => {
+    startStopwatch();
+});
+
+function startStopwatch() {
+if (!isRunning) {
+    startTime = new Date().getTime(); 
+    isRunning = true; 
+    console.log("Stopwatch started.");
 }
-function stopStopwatch(){
-    if(isRunning){
-        const now = new Date().getTime();
-        elapsedTime = now-startTime;
-        isRunning=false;
-        console.log(`Stopwatch stopped, Total time: ${elapsedTime} ms`);
-    }
 }
-backBtn.addEventListener("click", stopStopwatch);
+
+function backStopwatch() {
+if (isRunning) {
+    const now = new Date().getTime();
+    elapsedTime = now - startTime; 
+    isRunning = false; 
+    console.log(`Stopwatch stopped. Total time: ${elapsedTime} ms`);
+
+    const data = new FormData();
+    data.append("user_id", user_id);
+    data.append("movie_id", movie_id);
+    data.append("time_spent", elapsedTime);
+
+    axios(
+    "http://localhost/AI-Movie-Recommender/server-side/updateActivity.php",
+    {
+        method: "POST",
+        data: data,
+    }
+    )
+    .then((response) => {
+        console.log("time and clicks updated");
+    })
+    .catch((error) => {
+        console.log("error getting insidghts");
+    });
+}
+}
+
+// Add event listener to the button
+const backButton = document.getElementById("back-button");
+backButton.addEventListener("click", backStopwatch);
 
 function fetchMovieDetails(){
 
@@ -57,22 +81,35 @@ function fetchMovieDetails(){
 }
 
 
-
+let isBookmarked = false;
 bookmarkBtn.addEventListener("click", async () => {
     const data= new FormData();
 
     data.append("user_id", user_id);
     data.append("movie_id", movie_id);
-
+    if (!isBookmarked){
+        const response = await axios
+        ("http://localhost/AI-Movie-Recommender/server-side/insertToBookmark.php",
+            {
+                method: "POST",
+                data:data,
+        }).then((response) => {
+            console.log("Bookmark added: ", response.data)
+            isBookmarked=true;
+            bookmarkBtn.textContent="un-Bookmark"
+        }).catch(()=>console.log("Error Bookmarking"))
+}   else{
     const response = await axios
-    ("http://localhost/AI-Movie-Recommender/server-side/insertToBookmark.php",
+    ("http://localhost/AI-Movie-Recommender/server-side/unBookmark.php",
         {
-            method: "POST",
-            data:data,
-    }).then((response) => {
-        console.log("Bookmark added: ", response.data)
-    }).catch(()=>console.log("Error Bookmarking"))
-    
+        method:"POST",
+        data:data,
+    }).then((response)=>{
+        console.log("Bookmark removed")
+        isBookmarked=false;
+        bookmarkBtn.textContent("Bookmark");
+    }).catch(()=> console.log("Error unBookmarking"))
+}
 })
 
 
