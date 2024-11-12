@@ -5,7 +5,7 @@ const bookmarkBtn = document.getElementById("bookmark");
 const backBtn = document.getElementById("back-button")
 
 const user_id = 1;
-const movie_id = 1;
+const movie_id = 5;
 
 let rating_scale=0;
 //const user_id = localStorage.getItem("user_id")
@@ -36,12 +36,13 @@ function stopStopwatch(){
     }
 }
 backBtn.addEventListener("click", stopStopwatch);
+
 function fetchMovieDetails(){
 
     const data = new FormData();
     data.append("movie_id",movie_id);
 
-    axios(`http://localhost/movie_recommenderdb/AI-Movie-Recommender/server-side/getMovieDetails.php`,{
+    axios(`http://localhost/AI-Movie-Recommender/server-side/getMovieDetails.php`,{
         method: "POST",
         data:data
     }).then((response)=>{
@@ -64,7 +65,7 @@ bookmarkBtn.addEventListener("click", async () => {
     data.append("movie_id", movie_id);
 
     const response = await axios
-    ("http://localhost/movie_recommenderdb/AI-Movie-Recommender/server-side/insertToBookmark.php",
+    ("http://localhost/AI-Movie-Recommender/server-side/insertToBookmark.php",
         {
             method: "POST",
             data:data,
@@ -91,7 +92,7 @@ star.addEventListener("click",async () => {
     data.append("movie_id", movie_id);
     data.append("rating_scale", rating_scale);
 
-    axios("http://localhost/movie_recommenderdb/AI-Movie-Recommender/server-side/addRatingOnMovie.php",
+    axios("http://localhost/AI-Movie-Recommender/server-side/addRatingOnMovie.php",
         {
         method: "POST",
         data:data,
