@@ -18,7 +18,7 @@ function displayApiMessage(message) {
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
-async function sendMessage() {
+function sendMessage() {
   const userMessage = messageInput.value.trim();
   console.log(userMessage);
 
@@ -26,34 +26,43 @@ async function sendMessage() {
     console.log(userMessage);
     displayUserMessage(userMessage);
 
+    const body = new FormData();
+    body.append("userMessage", userMessage);
+    body.append("user_id", 3);
     console.log(userMessage);
 
-    const response = await fetch('http://localhost/AI-Movie-Recommender/server-side/dummyChat.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ message: userMessage })
-    });
+    // const response = await axios.post(
+    //   "http://localhost/AI-Movie-Recommender/server-side/chatbot.php",
+    //   {
+    //     data: body,
+    //   }
+    // );
 
-    const data = await response.json();
-    console.log(data);
-
-
-    if (data) {
-      let message = data.message;
-      console.log(message);
-      displayApiMessage(data.message);
-      const chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
-      chatHistory.push({ userMessage, message });
-      localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-
-    } else {
-      displayApiMessage("Sorry, I didn't understand that.");
-    }
-
+    axios
+      .post("http://localhost/AI-Movie-Recommender/server-side/chatbot.php", {
+        method: "POST",
+        data: body,
+      })
+      .then((response) => {
+        console.log(response.data.reply);
+      })
+      .catch((error) => {
+        console.log("Error fetchin data", error);
+      });
   }
-  messageInput.value = "";
+  // if (data) {
+  //   let message = data.message;
+  //   console.log(message);
+  //   displayApiMessage(data.message);
+  //   const chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
+  //   chatHistory.push({ userMessage, message });
+  //   localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+  // } else {
+  //   displayApiMessage("Sorry, I didn't understand that.");
+  // }
 }
+messageInput.value = "";
 
-sendMessageButton.addEventListener("click", sendMessage);
+sendMessageButton.addEventListener("click", async () => {
+  await sendMessage();
+});

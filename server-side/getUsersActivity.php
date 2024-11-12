@@ -29,12 +29,12 @@ $query->bind_param("i",$user_id);
 $query->execute();
 
 $result = $query->get_result();
-$array=[];
+$userActivity=[];
 if($result){
     
     while($movie = $result->fetch_assoc())
     {
-        $array[]= $movie;
+        $userActivity[]= $movie;
     }
 }
 else{
