@@ -3,13 +3,19 @@ const movieTitle = document.getElementById("movie-title");
 const movieDescription = document.getElementById("movie-description");
 const bookmarkBtn = document.getElementById("bookmark");
 const backBtn = document.getElementById("back-button")
+const imgSrc1 = document.getElementById("img_src1");
+const imgSrc2 = document.getElementById("img_src2");
+const movieGenre = document.getElementById("movie-genre");
+const movieReleaseYear = document.getElementById("movie-release-year");
 
 const user_id = 1;
-const movie_id = 5;
-
-let rating_scale=0;
+const movie_id = 8;
 //const user_id = localStorage.getItem("user_id")
 //const movie_id = localStorage.getItem("movie_id")
+
+
+let rating_scale=0;
+
 
 fetchMovieDetails()
 
@@ -75,8 +81,14 @@ function fetchMovieDetails(){
         data:data
     }).then((response)=>{
 
-        console.log(response.data.response.title);
-        //console.log("Average Rating: ", response.data.response.avg_rating);
+        const movie_details = response.data.response;
+        movieTitle.textContent=movie_details.title
+        imgSrc1.src=movie_details.image_src
+        imgSrc2.src=movie_details.image_src
+        movieGenre.textContent=movie_details.genre
+        movieReleaseYear.textContent=movie_details.release_year
+        movieDescription.textContent=movie_details.details
+
 
     }).catch((error)=>{
         console.log("Error fetchin data",error)
@@ -120,7 +132,7 @@ bookmarkBtn.addEventListener("click", async () => {
             .then((response) => {
                 console.log("Bookmark added: ", response.data);
                 isBookmarked = true;
-                bookmarkBtn.textContent = "Unbookmark";
+                bookmarkBtn.textContent = "un-Bookmark";
             })
             .catch(() => {
                 console.log("Error bookmarking");

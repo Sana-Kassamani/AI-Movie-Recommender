@@ -31,3 +31,19 @@ h1 {
 h2 {
   font-family: "DroidSans";
 }
+button {
+  font-family:"DroidSans-Bold" ;
+  border: 0;
+  cursor: pointer;
+  height: 35px;
+  border-radius: 100px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  opacity: 0.7;
+  }
+p{
+  font-family:"DroidSans" ;
+}

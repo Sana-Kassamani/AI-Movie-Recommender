@@ -11,13 +11,13 @@
 </head>
 <body>
     <section class="flex row movie-details">
-        <div id="movie-img" class="movie-img">
-            <img id="back-img " class="back-img" height="auto" width= "720" />
-            <img id="front-img" class="front-img"  height="564" width="auto">
+        <div class="movie-img">
+            <img id="img_src1" class="back-img" height="auto" width= "720" />
+            <img id="img_src2" class="front-img"  height="564" width="auto">
         </div>
         <div class="flex column about-movie">
             <div class="flex row top-title">
-                <h1 id="movie-title">ELYAS</h1>
+                <h1 id="movie-title"></h1>
                 <div class="rating-box">
                     <div class="stars">
                         <i class="fa-solid fa-star"></i>
@@ -31,19 +31,21 @@
             <div class="flex row middle-title">
                 <div class="flex column genre">
                     <h2>GENRE</h2>
-                    <p id="movie-genre">Action</p>
+                    <p id="movie-genre"></p>
                 </div>
                 <div class="flex column release-year">
                     <h2>REALEASE YEAR</h2>
-                    <p id="movie-release-year">2024</p>
+                    <p id="movie-release-year"></p>
                 </div>
             </div>
             <div class="flex column movie-details-part">
                 <h2>DETAILS</h2>
-                <p id="movie-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est qui quod, non voluptas modi nisi. Aperiam neque maxime, enim iure quisquam veritatis ipsum sed rerum laboriosam ipsa recusandae voluptate. Sequi.</p>
+                <p id="movie-description"></p>
             </div>
-            <button class="bookmark-btn" id="bookmark">Bookmark</button>
-            <button id="back-button">back</button>
+            <div class="flex column btn-container">
+                <button class="button bookmark-btn" id="bookmark">Bookmark</button>
+                <button class="button back-btn" id="back-button">back</button>
+            </div>
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
