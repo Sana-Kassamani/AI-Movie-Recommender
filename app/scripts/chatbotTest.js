@@ -50,16 +50,16 @@ function sendMessage() {
         console.log("Error fetchin data", error);
       });
   }
-  // if (data) {
-  //   let message = data.message;
-  //   console.log(message);
-  //   displayApiMessage(data.message);
-  //   const chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
-  //   chatHistory.push({ userMessage, message });
-  //   localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-  // } else {
-  //   displayApiMessage("Sorry, I didn't understand that.");
-  // }
+  if (data) {
+    let message = data.message;
+    console.log(message);
+    displayApiMessage(data.message);
+    const chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
+    chatHistory.push({ userMessage, message });
+    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+  } else {
+    displayApiMessage("Sorry, I didn't understand that.");
+  }
 }
 messageInput.value = "";
 
