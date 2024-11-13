@@ -1,6 +1,17 @@
+@font-face {
+  font-family: 'DroidSans';
+  src: url('../assets/fonts/DroidSans.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DroidSans-Bold';
+  src: url('../assets/fonts/DroidSans.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 .flex {
   display: flex;
-  justify-content: space-around;
 }
 
 .column {
@@ -11,4 +22,11 @@
 }
 .max-width {
   max-width: 50vh;
+}
+h1{
+  font-family: "DroidSans-Bold";
+  font-size: 32px;
+}
+h2{
+  font-family: "DroidSans";
 }

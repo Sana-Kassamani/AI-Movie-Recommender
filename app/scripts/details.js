@@ -70,7 +70,7 @@ function fetchMovieDetails(){
     const data = new FormData();
     data.append("movie_id",movie_id);
 
-    axios(`http://localhost/AI-Movie-Recommender/server-side/getMovieDetails.php`,{
+    axios(`http://localhost/AI-Movie-Recommender/server-side/getAllMovies.php`,{
         method: "POST",
         data:data
     }).then((response)=>{
@@ -107,7 +107,6 @@ function isBookmarkedFXN() {
         });
 }
 
-// Add event listener to the button
 bookmarkBtn.addEventListener("click", async () => {
     const data = new FormData();
     data.append("user_id", user_id);
@@ -141,11 +140,6 @@ bookmarkBtn.addEventListener("click", async () => {
             });
     }
 });
-
-
-
-
-
 
 stars.forEach((star, index1) => {
 star.addEventListener("click",async () => {

@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/movie-details.css" />
+    <link rel="stylesheet" href="../styles/base/utilities.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     
     <title>Document</title>
 </head>
 <body>
-    <section class="flex column movie-details">
-        <div>
-            <img>
+    <section class="flex row movie-details">
+        <div id="movie-img" class="movie-img">
+            <img id="back-img " class="back-img "src="../image.png" height="auto" width= "720" />
+            <img id="front-img" class="front-img" src="../image.png" height="564" width="auto">
         </div>
         <div class="flex column about-movie">
-            <h1 id="movie-title"></h1>
-            <p id="movie-description"></p>
-            <div class="flex row action">
-                <button id="bookmark">Bookmark</button>
+            <div class="flex row top-title">
+                <h1 id="movie-title">ELYAS</h1>
                 <div class="rating-box">
-                    <header>How much would you rate?</header>
                     <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -28,7 +27,23 @@
                         <i class="fa-solid fa-star"></i>
                     </div>
                 </div>
-                <button id="back-button">back</button>
+            </div>
+            <div class="flex row middle-title">
+                <div class="flex column genre">
+                    <h2>GENRE</h2>
+                    <p id="movie-genre">Action</p>
+                </div>
+                <div class="flex column release-year">
+                    <h2>REALEASE YEAR</h2>
+                    <p id="movie-release-year">2024</p>
+                </div>
+            </div>
+            <div class="flex column movie-details-part">
+                <h2>DETAILS</h2>
+                <p id="movie-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est qui quod, non voluptas modi nisi. Aperiam neque maxime, enim iure quisquam veritatis ipsum sed rerum laboriosam ipsa recusandae voluptate. Sequi.</p>
+            </div>
+            <button class="bookmark-btn" id="bookmark">Bookmark</button>
+            <button id="back-button">back</button>
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
