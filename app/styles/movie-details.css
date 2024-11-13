@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'DroidSans';
     src: url('../assets/fonts/DroidSans.ttf') format('opentype');
     font-weight: normal;
@@ -9,7 +9,7 @@
     src: url('../assets/fonts/DroidSans.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
-}
+} */
 * {
     margin: 0;
     padding: 0;
