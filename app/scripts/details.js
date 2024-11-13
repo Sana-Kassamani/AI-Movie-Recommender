@@ -70,13 +70,13 @@ function fetchMovieDetails(){
     const data = new FormData();
     data.append("movie_id",movie_id);
 
-    axios(`http://localhost/AI-Movie-Recommender/server-side/getAllMovies.php`,{
+    axios(`http://localhost/AI-Movie-Recommender/server-side/getMovieDetails.php`,{
         method: "POST",
         data:data
     }).then((response)=>{
 
-        console.log("Movie Id: ", response.data.response.movie_id);
-        console.log("Average Rating: ", response.data.response.avg_rating);
+        console.log(response.data.response.title);
+        //console.log("Average Rating: ", response.data.response.avg_rating);
 
     }).catch((error)=>{
         console.log("Error fetchin data",error)
