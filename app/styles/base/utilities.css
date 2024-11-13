@@ -21,9 +21,7 @@
 .align-center {
   align-items: center;
 }
-.max-width {
-  max-width: 50vh;
-}
+
 h1 {
   font-family: "DroidSans-Bold";
   font-size: 32px;

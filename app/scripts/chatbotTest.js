@@ -31,35 +31,18 @@ function sendMessage() {
     body.append("user_id", 3);
     console.log(userMessage);
 
-    // const response = await axios.post(
-    //   "http://localhost/AI-Movie-Recommender/server-side/chatbot.php",
-    //   {
-    //     data: body,
-    //   }
-    // );
-
     axios
       .post("http://localhost/AI-Movie-Recommender/server-side/chatbot.php", {
-        method: "POST",
-        data: body,
+        body,
       })
       .then((response) => {
         console.log(response.data.reply);
+        displayApiMessage(response.data.reply)
       })
       .catch((error) => {
         console.log("Error fetchin data", error);
       });
-  }
-  if (data) {
-    let message = data.message;
-    console.log(message);
-    displayApiMessage(data.message);
-    const chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
-    chatHistory.push({ userMessage, message });
-    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
-  } else {
-    displayApiMessage("Sorry, I didn't understand that.");
-  }
+    }
 }
 messageInput.value = "";
 
