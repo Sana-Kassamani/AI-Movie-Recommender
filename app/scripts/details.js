@@ -11,7 +11,7 @@ let rating_scale=0;
 //const user_id = localStorage.getItem("user_id")
 //const movie_id = localStorage.getItem("movie_id")
 
-//fetchMovieDetails()
+fetchMovieDetails()
 
 
 let startTime; 
@@ -65,24 +65,24 @@ if (isRunning) {
 const backButton = document.getElementById("back-button");
 backButton.addEventListener("click", backStopwatch);
 
-// function fetchMovieDetails(){
+function fetchMovieDetails(){
 
-//     const data = new FormData();
-//     data.append("movie_id",movie_id);
+    const data = new FormData();
+    data.append("movie_id",movie_id);
 
-//     axios(`http://localhost/AI-Movie-Recommender/server-side/getAllMovies.php`,{
-//         method: "POST",
-//         data:data
-//     }).then((response)=>{
+    axios(`http://localhost/AI-Movie-Recommender/server-side/getAllMovies.php`,{
+        method: "POST",
+        data:data
+    }).then((response)=>{
 
-//         console.log("Movie Id: ", response.data.response.movie_id);
-//         console.log("Average Rating: ", response.data.response.avg_rating);
+        console.log("Movie Id: ", response.data.response.movie_id);
+        console.log("Average Rating: ", response.data.response.avg_rating);
 
-//     }).catch((error)=>{
-//         console.log("Error fetchin data",error)
-//     })
+    }).catch((error)=>{
+        console.log("Error fetchin data",error)
+    })
 
-// }
+}
 
 function isBookmarkedFXN() {
     const data = new FormData();
