@@ -1,3 +1,6 @@
+.all-movies {
+  padding: 60px;
+}
 .all-users {
   gap: 20px;
   font-size: large;
@@ -27,4 +30,31 @@
 .ban-btn:disabled,
 .unban-btn:disabled {
   background-color: rgba(54, 50, 50, 0.589);
+}
+
+.movie {
+  border: 1px solid grey;
+  padding: 10px;
+  /* width: 100%; */
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-div {
+  height: 150px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.stars i {
+  color: #e6e6e6;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
