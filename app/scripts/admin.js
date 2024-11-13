@@ -33,11 +33,16 @@ const showAllUsers = () => {
 
 function displayUser(user) {
   inner_html = `
+        <div class="flex user align-center justify-center">
         <h3>${user.username}</h3>
+        </div>
+        <div class="flex user align-center justify-center">
         <h3 class="ban-header">${user.banned ? "Banned" : "Approved"}</h3>
+        </div>
+        
     `;
   const div_user = document.createElement("div");
-  div_user.setAttribute("class", "flex user align-center");
+  div_user.setAttribute("class", "flex user align-center space-around");
   div_user.innerHTML = inner_html;
   const banBtn = document.createElement("button");
   const unbanBtn = document.createElement("button");
@@ -75,7 +80,9 @@ const showAllMovies = () => {
       console.log(response.data.movies);
       response.data.movies.forEach((movie) => {
         const div_movie = displayMovie(movie);
+
         moviesSection.appendChild(div_movie);
+        addStars(div_movie, movie);
       });
     })
     .catch((error) => {
@@ -85,38 +92,40 @@ const showAllMovies = () => {
 
 function displayMovie(movie) {
   const div_movie = document.createElement("div");
-  div_movie.setAttribute("class", "flex movie");
+  div_movie.setAttribute("class", "flex movie space-around");
   div_movie.innerHTML = "";
   div_movie.innerHTML = `
-    <div>
-      <img class="img-div" src="${movie.image_src}" alt="" />
+    <div class="img-div">
+      <img  src="${movie.image_src}" alt="" />
     </div>
-    <div class="flex column">
+    <div class="flex column space-around align-center">
       <p>Movie Title</p>
       <p>${movie.title}</p>
       <div class="stars">
         
       </div>
     </div>
-    <div class="flex column">
+    <div class="flex column space-around align-center">
       <p>Ratio of Total Clicks</p>
       <p>${movie.nb_of_clicks}</p>
     </div>
-    <div class="flex column">
+    <div class="flex column space-around align-center">
       <p>Ratio of Total Time</p>
       <p>${movie.time_spent}</p>
     </div>
   `;
 
+  return div_movie;
+}
+const addStars = (div_movie, movie) => {
   const stars = div_movie.querySelector(".stars");
   stars.innerHTML = "";
   for (let i = 1; i <= 5; i++) {
     stars.innerHTML += `
-    <i class="fa-solid fa-star" ${"active" ? i <= movie.avg_rating : ""}></i>
-    `;
+      <i class="fa-solid fa-star ${i <= movie.avg_rating ? "active" : ""} "></i>
+      `;
   }
-  return div_movie;
-}
+};
 
 document.addEventListener("DOMContentLoaded", async () => {
   await showAllUsers();
