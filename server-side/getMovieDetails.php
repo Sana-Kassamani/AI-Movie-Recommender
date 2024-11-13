@@ -12,7 +12,7 @@ $result = $query->get_result();
 if($result->num_rows>0){
   $movie = $result->fetch_assoc();
   echo json_encode([
-      "message" => "Get movie details successful",
+      //"message" => "Get movie details successful",
       "response" => $movie
   ]);
 

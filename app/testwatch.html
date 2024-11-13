@@ -17,7 +17,7 @@
     </table>
 
     <!-- Stop Button -->
-    <button id="stopButton">Stop Stopwatch</button>
+    <button id="backButton">Stop Stopwatch</button>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
       integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
@@ -29,13 +29,13 @@
       let startTime; // Store the start time
       let elapsedTime = 0; // Store elapsed time when stopped
       let isRunning = false; // State of the stopwatch
-      let time_spent_cst = 0;
+      //let time_spent_cst = 0;
       // Start the stopwatch when the table is loaded
       const table = document.getElementById("myTable");
       window.addEventListener("load", () => {
-        if (table) {
-          startStopwatch();
-        }
+        
+        startStopwatch();
+        
       });
 
       // Function to start the stopwatch
@@ -48,12 +48,12 @@
       }
 
       // Function to stop the stopwatch and log the final time
-      function stopStopwatch() {
+      function backStopwatch() {
         if (isRunning) {
           const now = new Date().getTime();
           elapsedTime = now - startTime; // Calculate elapsed time
           isRunning = false; // Set running state to false
-          elapsedTime = time_spent_cst + elapsedTime;
+          //elapsedTime = time_spent_cst + elapsedTime;
           console.log(`Stopwatch stopped. Total time: ${elapsedTime} ms`);
 
           const data = new FormData();
@@ -78,8 +78,8 @@
       }
 
       // Add event listener to the button
-      const stopButton = document.getElementById("stopButton");
-      stopButton.addEventListener("click", stopStopwatch);
+      const backButton = document.getElementById("backButton");
+      backButton.addEventListener("click", backStopwatch);
     </script>
   </body>
 </html>
