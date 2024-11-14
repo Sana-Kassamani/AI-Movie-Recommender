@@ -46,11 +46,13 @@ body {
 .user-message {
   background-color: #ffeea9;
   align-self: flex-end;
+  border-bottom-right-radius: 0px;
 }
 
 .api-response {
   background-color: #e0e0e0;
   align-self: flex-start;
+  border-bottom-left-radius: 0px;
 }
 
 .input-container {
