@@ -9,7 +9,7 @@ $movie_id=$_POST['movie_id']??NULL;
 
 // if($movie_id==NULL)
 // {
-  $query=$connection->prepare("SELECT title,genre, avg_rating, release_year,details FROM movies Where movie_id BETWEEN 5 and 30;");
+  $query=$connection->prepare("SELECT title,genre, avg_rating, release_year,details FROM movies Group By title");
   $query->execute();
 
   $result=$query->get_result();

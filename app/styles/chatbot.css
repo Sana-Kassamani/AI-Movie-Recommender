@@ -1,10 +1,23 @@
+@font-face {
+  font-family: "DroidSans-Bold";
+  src: url("../assets/fonts/DroidSans-Bold.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DroidSans";
+  src: url("../assets/fonts/DroidSans.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
+  font-family: "DroidSans";
   background-color: #0d0235;
 }
 .chat-container {
   max-width: 100%;
   background-color: transparent;
-  padding: 60px;
+  padding: 30px;
 }
 
 .messages {
@@ -99,10 +112,16 @@ body {
   height: 100%;
 }
 header {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
   height: 50px;
   padding: 10px 60px;
   font-family: "DroidSans-Bold";
   color: white;
+}
+.chatbot {
+  color: #ffce00;
 }
 header > div {
   gap: 10px;
