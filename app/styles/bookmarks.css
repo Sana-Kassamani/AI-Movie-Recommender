@@ -1,22 +1,64 @@
-.boomarkContainer{
-    display: flex;
-    width: 100%;
-    padding: 50px;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-    
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
 }
-.boomarkContainer > div{
-    display: flex;
-    flex-direction: column;
-    width: 368px;
-    flex-grow: 1;
-    max-width: 400px;
-    min-width: 350px;
-    background-color: #ececec;
-    border-radius: 5px;
-    align-items: center;
-    /* padding: 10px; */
-    gap: 15px;
+header > h2 {
+  font-family: "Monteserrat";
+  font-weight: 900;
+  font-size: 36px;
+  padding: 20px 32px;
+  color: var(--primaryColor);
+  margin-bottom: 50px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.containers {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  object-fit: contain;
+}
+
+.images {
+  flex-wrap: wrap;
+  width: 100%;
+}
+.bookmarkContainer {
+  padding: 20px;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 200px;
+  background-color: transparent;
+  border-radius: 5px;
+  align-items: center;
+  /* padding: 10px; */
+  gap: 15px;
+}
+.back-btn {
+  position: absolute;
+  position: fixed;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+.back-btn img {
+  width: 100%;
+  height: 100%;
 }
