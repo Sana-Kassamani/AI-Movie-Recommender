@@ -5,9 +5,9 @@ body,
 }
 
 button {
-  padding: 6px 24px;
+  /* padding: 6px 24px; */
   font-size: 16px;
-  height: 30px;
+  /* height: 30px; */
   font-weight: bold;
   color: #0d0235;
   background-color: #ffce00;
@@ -45,6 +45,8 @@ section {
 
 h1 {
   font-size: 2rem;
+  font-family: "Monteserrat";
+
 }
 
 h3 {
@@ -83,7 +85,7 @@ h3 {
 }
 
 .max-width {
-  max-width: 15vw;
+  max-width: 30vh;
 }
 
 .previous {
