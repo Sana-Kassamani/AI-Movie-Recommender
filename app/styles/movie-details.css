@@ -20,14 +20,11 @@
 .movie-details {
   width: 100%;
   justify-content: space-between;
-  /* height: 100vh; */
 }
 .movie-details > div {
   width: 50%;
 }
 .movie-img {
-  width: 50vw;
-  /* Full viewport height */
   background-size: cover; /* Ensure the image covers the element */
   background-position: center;
 }
@@ -45,6 +42,7 @@
 .about-movie {
   width: 50vw;
   padding: 60px;
+  align-items: start;
 }
 .top-title {
   align-items: center;
@@ -62,6 +60,7 @@
   gap: 20px;
 }
 .middle-title > div {
+  gap: 20px;
   padding-bottom: 40px;
 }
 .rating-box {
@@ -72,6 +71,7 @@
   /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); */
 }
 .movie-details-part {
+  gap: 20px;
   align-items: start;
   padding: 0px 20px 40px 20px;
 }
@@ -96,11 +96,13 @@
   color: #ff9c1a;
 }
 .btn-container {
-  gap: 20px;
-  align-items: center;
+  width: 100%;
+
+  align-items: flex-end;
   justify-content: center;
 }
 .bookmark-btn {
+  align-self: flex-end;
   width: 150px;
   font-size: 16px;
   color: #0d0235;
