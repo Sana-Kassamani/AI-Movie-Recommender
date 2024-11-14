@@ -1,17 +1,16 @@
 const signup = document.getElementById('signupButton');
-const signedUsername = document.getElementById('signedUsername');
-const signedPassword = document.getElementById('signedPassword');
-const signError = document.getElementById('signErrorMessage');
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+const error = document.getElementById('errorMessage');
 const login = document.getElementById('loginButton');
-const loginUsername = document.getElementById('loginUsername');
-const loginPassword = document.getElementById('loginPassword');
-const loginError = document.getElementById('loginErrorMessage');
+const shiftMessage = document.getElementById("shiftMessage");
+
 
 signup.addEventListener('click', () => {
 
   const formData = new FormData();
-  formData.append("username", signedUsername.value);
-  formData.append("password", signedPassword.value);
+  formData.append("username", username.value);
+  formData.append("password", password.value);
 
   fetch("http://localhost/AI-Movie-Recommender/server-side/signup.php", {
     method: "POST",
@@ -24,11 +23,11 @@ signup.addEventListener('click', () => {
       if (data['message'] == 'Created') {
         console.log(data['user_id']);
         localStorage.setItem('user_id', data['user_id']);
-        window.location.href = "./pages/displayMovies.html";
+        window.location.href = "./pages/home.html";
       }
       else if (data['message'] == 'Name is already registered') {
         console.log("Name is already registered");
-        signError.innerText = "Name is already registered";
+        error.innerText = "Name is already registered";
 
       }
     })
@@ -42,8 +41,8 @@ signup.addEventListener('click', () => {
 login.addEventListener('click', () => {
 
   const formData = new FormData();
-  formData.append("username", loginUsername.value);
-  formData.append("password", loginPassword.value);
+  formData.append("username", username.value);
+  formData.append("password", password.value);
 
   fetch("http://localhost/AI-Movie-Recommender/server-side/login.php", {
     method: "POST",
@@ -57,16 +56,19 @@ login.addEventListener('click', () => {
         console.log(data['user']);
         const user = data['user'];
         localStorage.setItem('user_id', user['user_id']);
-        window.location.href = "./pages/displayMovies.html";
+        window.location.href = "./pages/home.html";
       }
       else if (data['status'] == 'You are banned!') {
         console.log("You are banned!");
-        loginError.innerText = "You are banned!";
+        error.innerText = "You are banned!";
 
       }
       else if (data['status'] == 'Invalid Credentials!') {
         console.log("Invalid Credentials!");
-        loginError.innerText = "Invalid Credentials!";
+        error.innerText = "Invalid Credentials!";
+
+      } else if (data['status'] == 'Username doesnt exist, Please register') {
+        error.innerText = "Username doesnt exist Please register";
 
       }
     })
@@ -75,3 +77,14 @@ login.addEventListener('click', () => {
     });
 
 })
+shiftMessage.addEventListener("click", () => {
+  if (loginButton.style.display === "none") {
+    loginButton.style.display = "inline-block";
+    signupButton.style.display = "none";
+    shiftMessage.textContent = "Don't have an account yet?";
+  } else {
+    signupButton.style.display = "inline-block";
+    loginButton.style.display = "none";
+    shiftMessage.textContent = "Do you already have an account?";
+  }
+});

@@ -1,0 +1,118 @@
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #0D0235;
+  background-color: #FFCE00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+navbar {
+  height: 70px;
+  justify-content: space-between;
+  margin: 0 30px;
+}
+
+.navbar-center {
+  gap: 20px;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.selectGenre {
+  color: white;
+  border: none;
+  background-color: #0D0235;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+section {
+  margin-bottom: 5vh;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+.overflow-x {
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.overflow-x::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-section {
+  background-image: url("./../assets/hero-home.png");
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  gap: 10px;
+}
+
+.moviesContainer {
+  margin: 5vh;
+  gap: 10px;
+}
+
+.moviesContainer h3 {
+  color: #FFCE00;
+  font-weight: bold;
+}
+
+.movie {
+  padding: 10px;
+}
+
+.max-width {
+  max-width: 30vh;
+}
+
+.previous {
+  background-image: url("./../assets/previous.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.next {
+  background-image: url("./../assets/next.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.moviesContainer button {
+  background-color: #0D0235;
+  border: none;
+  font-size: 1.8rem;
+  width: 40px;
+  height: 70px;
+  cursor: pointer;
+}
+
+
+footer {
+
+  padding: 20px;
+  gap: 30px;
+}
+
+.upper-footer {
+  display: flex;
+  gap: 20vw;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
