@@ -1,36 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/index.css" />
 
-    <link rel="stylesheet" href="./styles/base/utilities.css">
-
+    <link rel="stylesheet" href="./styles/base/utilities.css" />
   </head>
   <body>
     <section class="flex justify-content align-items loginForm">
-      <div class="flex flex-column align-items ">
+      <div class="flex flex-column align-items">
+        <h1>Welcome Back to Movie Mood</h1>
+        <h3>
+          Log in to discover your next favorite film based on how you feel.
+        </h3>
 
-      <h1>Welcome Back to Movie Mood</h1>
-      <h3>Log in to discover your next favorite film based on how you feel.</h3>
+        <div class="loginContainer">
+          <div><label>Name</label></div>
+          <div>
+            <input id="username" placeholder="Enter your name" required />
+          </div>
+          <div><label>Password</label></div>
+          <div>
+            <input id="password" placeholder="Enter your password" required />
+          </div>
 
-      <div class="loginContainer ">
-        <div><label>Name</label></div>
-        <div><input id="username" placeholder="Enter your name" required /></div>
-        <div><label>Password</label></div>
-        <div>  <input id="password" placeholder="Enter your password" required /> </div>
-
-        <p id="shiftMessage" class="shiftMessage">Do you already has an acoount?</p>
-        <p id="errorMessage" class="error"></p>
-        <button id="signupButton" style="display: none;">Sign up</button>
-        <button id="loginButton">Login</button>
-
-
+          <p id="shiftMessage" class="shiftMessage">
+            Do you already has an acoount?
+          </p>
+          <p id="errorMessage" class="error"></p>
+          <button id="signupButton" style="display: none">Sign up</button>
+          <button id="loginButton">Login</button>
+        </div>
       </div>
-    </div>
-
     </section>
-    <script src="./scripts/signup.js"></script>
+    <script src="./scripts/login_signup.js"></script>
   </body>
 </html>

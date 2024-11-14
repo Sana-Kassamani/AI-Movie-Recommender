@@ -12,26 +12,9 @@ function getLastMessages($messages) {
     return ($messagesLength <= 5) ? $messages : array_slice($messages, $messagesLength - 5);
 }
 
-// $userMessage = $_POST["userMessage"]; //from user, messages should be a message
-$userMessage = "Tell more about this movie Riddle of Fire?";
+$userMessage = $_POST["userMessage"]; //from user, messages should be a message
+// $userMessage = "Tell more about this movie Riddle of Fire?";
 
-// $movies = [
-//     ["id" => 1, "name" => "Inception", "genre" => "sci-fi", "release_date" => "2010", "info" => "A sci-fi thriller about dreams."],
-//     ["id" => 2, "name" => "The Matrix", "genre" => "sci-fi", "release_date" => "1999", "info" => "A cyberpunk story of AI and humanity."],
-//     ["id" => 3, "name" => "The Godfather", "genre" => "crime", "release_date" => "1972", "info" => "A classic crime drama."],
-//     ["id" => 4, "name" => "The Dark Knight", "genre" => "action", "release_date" => "2008", "info" => "A superhero film featuring Batman's battle against the Joker."],
-//     ["id" => 5, "name" => "Pulp Fiction", "genre" => "crime", "release_date" => "1994", "info" => "A nonlinear story about crime, redemption, and twists."],
-//     ["id" => 6, "name" => "Forrest Gump", "genre" => "drama", "release_date" => "1994", "info" => "The journey of a kind-hearted man through life's challenges."],
-//     ["id" => 7, "name" => "Fight Club", "genre" => "drama", "release_date" => "1999", "info" => "A dark story exploring consumerism and identity."],
-//     ["id" => 8, "name" => "Interstellar", "genre" => "sci-fi", "release_date" => "2014", "info" => "A space exploration film about love and survival."],
-//     ["id" => 9, "name" => "The Shawshank Redemption", "genre" => "drama", "release_date" => "1994", "info" => "A story of hope and friendship in a prison setting."],
-//     ["id" => 10, "name" => "Schindler's List", "genre" => "historical", "release_date" => "1993", "info" => "A historical drama about the Holocaust."],
-//     ["id" => 11, "name" => "Gladiator", "genre" => "action", "release_date" => "2000", "info" => "A tale of revenge and honor in ancient Rome."],
-//     ["id" => 12, "name" => "Titanic", "genre" => "romance", "release_date" => "1997", "info" => "A romantic tragedy set aboard the ill-fated Titanic."],
-//     ["id" => 13, "name" => "The Avengers", "genre" => "action", "release_date" => "2012", "info" => "A team of superheroes saving the world."],
-//     ["id" => 14, "name" => "Avatar", "genre" => "sci-fi", "release_date" => "2009", "info" => "A visually stunning story of an alien world and human conflict."],
-//     ["id" => 15, "name" => "The Silence of the Lambs", "genre" => "thriller", "release_date" => "1991", "info" => "A chilling thriller about a serial killer and an FBI agent."]
-// ];
 
 // $userActivity = [
 //     ["name"=>"Monkey Man", "genre" => "Action", "nb_of_clicks"=>1, "time_spent(ms)"=>27119, "bookmarked"=>"no","rating_scale(/5)"=>4],

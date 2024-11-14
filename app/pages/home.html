@@ -1,132 +1,116 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="./../styles/base/utilities.css">
-    <link rel="stylesheet" href="./../styles/home.css">
-
+    <link rel="stylesheet" href="./../styles/base/utilities.css" />
+    <link rel="stylesheet" href="./../styles/home.css" />
   </head>
   <body>
     <navbar class="flex align-items">
-      <div>Movie Recommender</div>
+      <div>MovieMood</div>
       <div class="flex align-items navbar-center">
+        <a href="./chatbot.html" id="chatbotButton">Chatbot</a>
 
-          <a href="./chatbot.html" id="chatbotButton">Chatbot</a>
-
-
-          <select name="genre" id="genre" class="selectGenre" >
-            <option value="actionGenre">Action</option>
-            <option value="comedyGenre">Comedy</option>
-            <option value="dramaGenre">Drama</option>
-            <option value="horrorGenre">Horror</option>
-            <option value="westernGenre">Western</option>
-            <option value="scienceFictionGenre">Science-fiction</option>
-            <option value="otherGenre">Other</option>
-
-
-          </select>
-          <a href="./bookmarks.html" id="bookmarkButton">Bookmarks</a>
+        <select name="genre" id="genre" class="selectGenre">
+          <option value="actionGenre">Action</option>
+          <!-- <option value="comedyGenre">Comedy</option> -->
+          <option value="dramaGenre">Drama</option>
+          <option value="horrorGenre">Horror</option>
+          <option value="westernGenre">Western</option>
+          <option value="scienceFictionGenre">Science-fiction</option>
+          <option value="otherGenre">Other</option>
+        </select>
+        <a href="./bookmarks.html" id="bookmarkButton">Bookmarks</a>
       </div>
       <div><button id="logoutButton">Log out</button></div>
-
     </navbar>
-    <section class="hero-section flex flex-column align-items justify-content ">
+    <section class="hero-section flex flex-column align-items justify-content">
       <h1>Discover the Perfect Movie for Every Mood</h1>
       <h3>Do you want to try our AI Movie Recommender?</h3>
       <button id="tryButton">Try</button>
-
     </section>
 
-
-
     <section>
-    <div id="moviesContainer" class="moviesContainer">
+      <div id="moviesContainer" class="moviesContainer">
+        <h3>Action</h3>
+        <div class="flex align-items">
+          <button id="prevButtonAction" class="previous"></button>
+          <div id="actionGenre" class="genre-section flex overflow-x"></div>
+          <button id="nextButtonAction" class="next"></button>
+        </div>
 
-      <h3>Action</h3>
-      <div class="flex align-items">
-        <button id="prevButtonAction" class="previous">  </button>
-        <div id="actionGenre" class="genre-section flex overflow-x"></div>
-        <button id="nextButtonAction"class="next">  </button>
-      </div>
-
-      <h3>Comedy</h3>
+        <!-- <h3>Comedy</h3>
       <div class="flex align-items">
         <button id="prevButtonComedy"class="previous"> </button>
         <div id="comedyGenre" class="genre-section flex overflow-x"></div>
         <button id="nextButtonComedy"class="next">  </button>
-      </div>
+      </div> -->
 
-      <h3>Drama</h3>
-      <div class="flex align-items">
-        <button id="prevButtonDrama"class="previous">  </button>
-        <div id="dramaGenre" class="genre-section flex overflow-x"></div>
-        <button id="nextButtonDrama" class="next">  </button>
-      </div>
-
-      <h3>Horror</h3>
-      <div class="flex align-items">
-        <button id="prevButtonHorror" class="previous"></button>
-        <div id="horrorGenre" class="genre-section flex overflow-x"></div>
-        <button id="nextButtonHorror" class="next">  </button>
-      </div>
-
-      <h3>Western</h3>
-      <div class="flex align-items">
-        <button id="prevButtonWestern" class="previous">  </button>
-        <div id="westernGenre" class="genre-section flex overflow-x"></div>
-        <button id="nextButtonWestern" class="next">  </button>
-      </div>
-
-      <h3>Science-fiction</h3>
-      <div class="flex align-items">
-        <button id="prevButtonFiction"class="previous">  </button>
-        <div id="scienceFictionGenre" class="genre-section flex overflow-x"></div>
-        <button id="nextButtonFiction"class="next">  </button>
-      </div>
-
-      <h3>Other</h3>
-      <div class="flex align-items">
-        <button id="prevButtonOther" class="previous">  </button>
-        <div id="otherGenre" class="genre-section flex overflow-x"></div>
-        <button id="nextButtonOther" class="next">  </button>
-      </div>
-
-    </div>
-   </section>
-
-
-   <footer class="flex flex-column align-items">
-
-    <div class="upper-footer flex align-items">
-      <div><h3>MovieMood</h3></div>
-
-      <div>
-        <h4>Links</h4>
-        <div class="flex space-between">
-          <div><a href>Chatbot</a></div>
-          <div><a href="">Bookmarks</a></div>
+        <h3>Drama</h3>
+        <div class="flex align-items">
+          <button id="prevButtonDrama" class="previous"></button>
+          <div id="dramaGenre" class="genre-section flex overflow-x"></div>
+          <button id="nextButtonDrama" class="next"></button>
         </div>
 
-      </div>
+        <h3>Horror</h3>
+        <div class="flex align-items">
+          <button id="prevButtonHorror" class="previous"></button>
+          <div id="horrorGenre" class="genre-section flex overflow-x"></div>
+          <button id="nextButtonHorror" class="next"></button>
+        </div>
 
-      <div>
-        <h4>Social Media</h4>
-        <div class="flex space-betwwen">
-          <a href>Chatbot</a>
-        <a href="">Bookmarks</a>
+        <h3>Western</h3>
+        <div class="flex align-items">
+          <button id="prevButtonWestern" class="previous"></button>
+          <div id="westernGenre" class="genre-section flex overflow-x"></div>
+          <button id="nextButtonWestern" class="next"></button>
+        </div>
+
+        <h3>Science-fiction</h3>
+        <div class="flex align-items">
+          <button id="prevButtonFiction" class="previous"></button>
+          <div
+            id="scienceFictionGenre"
+            class="genre-section flex overflow-x"
+          ></div>
+          <button id="nextButtonFiction" class="next"></button>
+        </div>
+
+        <h3>Other</h3>
+        <div class="flex align-items">
+          <button id="prevButtonOther" class="previous"></button>
+          <div id="otherGenre" class="genre-section flex overflow-x"></div>
+          <button id="nextButtonOther" class="next"></button>
         </div>
       </div>
+    </section>
 
-    </div>
-    <div class="flex lower-footer space-between">
-      <p>©All rights reserved</p>
-     <p>Terms of Service</p>
-    </div>
+    <footer class="flex flex-column align-items">
+      <div class="upper-footer flex align-items">
+        <div><h3>MovieMood</h3></div>
 
-   </footer>
+        <div>
+          <h4>Links</h4>
+          <div class="flex space-between">
+            <div><a href>Chatbot</a></div>
+            <div><a href="">Bookmarks</a></div>
+          </div>
+        </div>
+
+        <div>
+          <h4>Social Media</h4>
+          <div class="flex space-betwwen">
+            <a href>Chatbot</a>
+            <a href="">Bookmarks</a>
+          </div>
+        </div>
+      </div>
+      <div class="flex lower-footer space-between">
+        <p>©All rights reserved</p>
+        <p>Terms of Service</p>
+      </div>
+    </footer>
 
     <script src="./../scripts/displayMovies.js"></script>
-
-
   </body>
-
 </html>

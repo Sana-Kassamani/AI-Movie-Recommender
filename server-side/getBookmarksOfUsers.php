@@ -7,7 +7,7 @@ include "connection.php";
 
 $user_id = $_POST["user_id"];
 
-$query = $connection->prepare("SELECT movie_id FROM bookmarks WHERE user_id=?");
+$query = $connection->prepare("SELECT * FROM bookmarks WHERE user_id=?");
 $query->bind_param("i",$user_id);
 $query->execute();
 

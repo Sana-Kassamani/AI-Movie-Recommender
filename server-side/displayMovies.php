@@ -8,7 +8,7 @@ include "connection.php";
 $movie_id=$_POST['movie_id']??NULL;
 
 
-  $query=$connection->prepare("SELECT movie_id,title,genre, image_src FROM movies");
+  $query=$connection->prepare("SELECT movie_id,title,genre, image_src FROM movies Group By title");
   $query->execute();
 
   $result=$query->get_result();
