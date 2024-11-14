@@ -1,7 +1,6 @@
 body,
 .selectGenre {
   font-family: "DroidSans-Bold";
-
 }
 
 button {
@@ -46,7 +45,6 @@ section {
 h1 {
   font-size: 2rem;
   font-family: "Monteserrat";
-
 }
 
 h3 {
@@ -112,19 +110,21 @@ h3 {
 footer {
   border-top: 1px solid white;
   padding: 20px;
-  height: 100px;
   margin-top: 50px;
 }
 
-footer>div {
+footer > div {
   height: 100%;
   gap: 10px;
 }
 
-footer>div>div {
+footer > div > div {
   gap: 20px;
 }
 
 footer h4 {
   margin-bottom: 10px;
+}
+footer a {
+  font-family: "DroidSans";
 }
