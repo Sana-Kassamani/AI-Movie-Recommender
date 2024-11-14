@@ -17,6 +17,11 @@
 }
 @font-face {
   font-family: "Monteserrat";
+  src: url("./../../assets/fonts/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Monteserrat";
   src: url("./../../assets/fonts/Montserrat-Bold.ttf");
   font-weight: 900;
 }

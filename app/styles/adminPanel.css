@@ -1,11 +1,13 @@
 body {
   background-color: var(--secondaryColor);
 }
+::-webkit-scrollbar {
+  width: 10px;
+  color: grey;
+}
 header {
   height: 50px;
-  padding: 0px 60px;
-
-  border: 1px solid white;
+  padding: 10px 60px;
   font-family: "DroidSans-Bold";
   color: white;
 }
@@ -48,12 +50,10 @@ header > div {
 }
 
 .moviesSection {
-  margin: 30px 0px;
-  padding: 10px 60px;
-  height: 400px;
-  overflow-y: scroll;
+  display: none;
 }
-.usersSection {
+.usersSection,
+.moviesSection {
   color: white;
   padding: 15px;
   border-radius: 20px;
@@ -62,19 +62,24 @@ header > div {
   font-size: medium;
   background-color: var(--lightBlue);
 }
-.usersSection > h2 {
+.usersSection > h2,
+.moviesSection > h2 {
   font-family: "Monteserrat";
   font-weight: 900;
   font-size: 36px;
   padding-left: 32px;
   color: var(--primaryColor);
 }
+.moviesSection p {
+  font-family: "Monteserrat";
+  font-weight: 500;
+}
 
 .user-titles {
   border-bottom: 1px solid var(--secondaryColor);
   border-top: 1px solid var(--secondaryColor);
 }
-.user h3 {
+.user-titles h3 {
   font-family: "Monteserrat";
   font-weight: 700;
 }
@@ -82,13 +87,15 @@ header > div {
 .space {
   max-width: 125px;
 }
-.user {
+.user,
+.user-titles {
   font-family: "Monteserrat";
   font-weight: 300;
   height: 50px;
   gap: 10px;
 }
-.user > div {
+.user > div,
+.user-titles > div {
   width: 200px;
 }
 
@@ -117,9 +124,10 @@ header > div {
 }
 
 .movie {
-  border: 1px solid grey;
+  font-size: 18px;
+  border-bottom: 1px solid var(--secondaryColor);
+  border-top: 1px solid var(--secondaryColor);
   padding: 10px;
-  /* width: 100%; */
 }
 .movie > div {
   width: 200px;
@@ -144,4 +152,19 @@ img {
   font-size: 20px;
   cursor: pointer;
   transition: color 0.2s ease;
+}
+
+@media screen and (max-width: 450px) {
+  .primary-btn {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .movie {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .movie > div {
+    gap: 10px;
+  }
 }

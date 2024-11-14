@@ -1,5 +1,7 @@
 const users = document.getElementById("all-users");
 const moviesSection = document.getElementById("all-movies");
+const usersTab = document.getElementById("users-tab");
+const moviesTab = document.getElementById("movies-tab");
 
 const toggleBan = (user, isBanned) => {
   let data = new FormData();
@@ -99,7 +101,7 @@ function displayMovie(movie) {
       <img  src="${movie.image_src}" alt="" />
     </div>
     <div class="flex column space-around align-center">
-      <p>Movie Title</p>
+      
       <p>${movie.title}</p>
       <div class="stars">
         
@@ -130,4 +132,13 @@ const addStars = (div_movie, movie) => {
 document.addEventListener("DOMContentLoaded", async () => {
   await showAllUsers();
   await showAllMovies();
+});
+
+usersTab.addEventListener("click", () => {
+  users.style.display = "flex";
+  moviesSection.style.display = "none";
+});
+moviesTab.addEventListener("click", () => {
+  users.style.display = "none";
+  moviesSection.style.display = "flex";
 });
