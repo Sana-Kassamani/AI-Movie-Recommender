@@ -1,0 +1,22 @@
+.boomarkContainer{
+    display: flex;
+    width: 100%;
+    padding: 50px;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.boomarkContainer > div{
+    display: flex;
+    flex-direction: column;
+    width: 368px;
+    flex-grow: 1;
+    max-width: 400px;
+    min-width: 350px;
+    background-color: #ececec;
+    border-radius: 5px;
+    align-items: center;
+    /* padding: 10px; */
+    gap: 15px;
+}
