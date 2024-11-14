@@ -1,14 +1,40 @@
-.flex {
-  display: flex;
-  justify-content: space-around;
+* {
+  margin: 0;
+
 }
 
-.column {
+body {
+  overflow-x: hidden;
+  background-color: #0D0235;
+  color: white;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.flex-column {
   flex-direction: column;
 }
+
 .align-center {
   align-items: center;
 }
-.max-width {
-  max-width: 50vh;
+
+
+
+.full-width {
+  width: 100%;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
