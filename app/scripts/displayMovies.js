@@ -96,4 +96,5 @@ tryButton.addEventListener("click", () => {
 });
 logoutButton.addEventListener("click", () => {
   window.location.href = "./../index.html";
+  // localStorage.setItem("userId", 0);
 });

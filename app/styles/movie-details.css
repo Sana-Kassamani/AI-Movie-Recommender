@@ -78,9 +78,7 @@
 .movie-details-part > P {
   text-align: left;
 }
-.release-year > p {
-  /* text-align: right; */
-}
+
 .rating-box .stars {
   display: flex;
   align-items: center;

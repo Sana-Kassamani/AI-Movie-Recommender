@@ -73,10 +73,10 @@ shiftMessage.addEventListener("click", () => {
   if (loginButton.style.display === "none") {
     loginButton.style.display = "inline-block";
     signupButton.style.display = "none";
-    shiftMessage.textContent = "Don't have an account yet?";
+    shiftMessage.textContent = "Don't have an account yet? Signup";
   } else {
     signupButton.style.display = "inline-block";
     loginButton.style.display = "none";
-    shiftMessage.textContent = "Do you already have an account?";
+    shiftMessage.textContent = "Do you already have an account? Login";
   }
 });

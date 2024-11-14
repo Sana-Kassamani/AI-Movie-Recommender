@@ -3,14 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles/base/colors.css">
     <link rel="stylesheet" href="./../styles/chatbot.css" />
-    <!-- <link rel="stylesheet" href="./../styles/base/utilities.css" /> -->
+    <link rel="stylesheet" href="./../styles/base/utilities.css" />
   </head>
 
-
   <body>
+    <header class="flex align-center space-between">
+      <div>MovieMood</div>
+      <!-- <div class="flex align-center justify-end">
+        <div class="admin-icon">
+          <img src="./../assets/icons/circle-user-round.svg" alt="" />
+        </div> -->
+      </div>
+    </header>
     <div class="chat-container flex">
-      <button class="button back-btn" id="back-button">Home</button>
+      <button class="button back-btn" id="back-button">
+        <img src="./../assets/icons/back.svg" alt="" />
+      </button>
 
       <div id="messages" class="messages"></div>
       <div class="input-container">
@@ -23,7 +33,6 @@
         <button id="send-btn" class="send-btn">Send</button>
       </div>
     </div>
-
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"

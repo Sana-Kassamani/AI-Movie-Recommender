@@ -1,5 +1,5 @@
-body{
-  background-color: #0D0235;
+body {
+  background-color: #0d0235;
 }
 .chat-container {
   max-width: 100%;
@@ -15,9 +15,9 @@ body{
   padding: 10px;
   gap: 10px;
 }
-.messages::-webkit-scrollbar{
+.messages::-webkit-scrollbar {
   position: relative;
-  width:5px;
+  width: 5px;
   background-color: white;
   border-radius: 5px;
 }
@@ -27,18 +27,17 @@ body{
   margin-bottom: 10px;
   border-radius: 5px;
   max-width: 60%;
-  word-wrap: break-word; 
-
+  word-wrap: break-word;
 }
 
 .user-message {
-  background-color: #FFEEA9;
+  background-color: #ffeea9;
   align-self: flex-end;
 }
 
 .api-response {
   background-color: #e0e0e0;
-  align-self: flex-start; 
+  align-self: flex-start;
 }
 
 .input-container {
@@ -46,9 +45,9 @@ body{
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: transparent; 
+  background-color: transparent;
   display: flex;
-  padding: 10px; 
+  padding: 10px;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   align-items: center;
   justify-content: center;
@@ -59,7 +58,6 @@ body{
   padding: 10px;
   border-radius: 10px;
   border: 1px solid #ccc;
-  
 }
 
 .send-btn {
@@ -70,8 +68,8 @@ body{
   border-radius: 5px;
   margin-left: 10px;
 }
-.back-btn{
-  font-family:"DroidSans-Bold" ;
+.back-btn {
+  font-family: "DroidSans-Bold";
   border: 0;
   cursor: pointer;
   height: 35px;
@@ -80,11 +78,36 @@ body{
   transition: all 0.3s;
   position: absolute;
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 70px;
   font-size: 16px;
   color: rgb(255, 255, 255);
   background-color: black;
   z-index: 10;
+}
+.back-btn {
+  position: absolute;
+  position: fixed;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+}
+.back-btn img {
+  width: 100%;
+  height: 100%;
+}
+header {
+  height: 50px;
+  padding: 10px 60px;
+  font-family: "DroidSans-Bold";
+  color: white;
+}
+header > div {
+  gap: 10px;
+}
+.admin-icon {
+  height: 30px;
+  width: 30px;
 }

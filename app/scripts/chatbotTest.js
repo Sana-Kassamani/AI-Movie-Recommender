@@ -1,7 +1,7 @@
 const sendMessageButton = document.getElementById("send-btn");
 const messageInput = document.getElementById("message-input");
 const messagesContainer = document.getElementById("messages");
-const backButton = document.getElementById("back-button")
+const backButton = document.getElementById("back-button");
 
 function displayUserMessage(message) {
   const messageElement = document.createElement("div");
@@ -29,7 +29,8 @@ function sendMessage() {
 
     const data = new FormData();
     data.append("userMessage", userMessage);
-    data.append("user_id", 1);
+    const user_id = localStorage.getItem("user_id");
+    data.append("user_id", user_id);
     console.log(userMessage);
 
     axios("http://localhost/AI-Movie-Recommender/server-side/chatbot.php", {
@@ -50,6 +51,6 @@ function sendMessage() {
 sendMessageButton.addEventListener("click", async () => {
   await sendMessage();
 });
-backButton.addEventListener("click", ()=>{
-  window.location.href= "./../pages/home.html"
-})
+backButton.addEventListener("click", () => {
+  window.location.href = "./../pages/home.html";
+});
