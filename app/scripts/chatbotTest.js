@@ -26,16 +26,15 @@ function sendMessage() {
     console.log(userMessage);
     displayUserMessage(userMessage);
 
-    const body = new FormData();
-    body.append("userMessage", userMessage);
-    body.append("user_id", 3);
+    const data = new FormData();
+    data.append("userMessage", userMessage);
+    data.append("user_id", 1);
     console.log(userMessage);
 
-    axios
-      .post(
-        "http://localhost/AI-Movie-Recommender/server-side/chatbot.php",
-        body
-      )
+    axios("http://localhost/AI-Movie-Recommender/server-side/chatbot.php", {
+      method: "POST",
+      data: data,
+    })
       .then((response) => {
         console.log(response.data.reply);
         displayApiMessage(response.data.reply);
@@ -44,8 +43,8 @@ function sendMessage() {
         console.log("Error fetching data", error);
       });
   }
+  messageInput.value = "";
 }
-messageInput.value = "";
 
 sendMessageButton.addEventListener("click", async () => {
   await sendMessage();
