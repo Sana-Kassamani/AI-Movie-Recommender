@@ -1,5 +1,7 @@
 const user_id = localStorage.getItem("user_id");
 const bookmarkContainer = document.getElementById("bookmarkContainer");
+// const imgSrc = document.getElementById("img_src");
+// const movieName = document.getElementById("movie-name");
 
 const formData = new FormData();
 formData.append("user_id", user_id);
@@ -30,23 +32,26 @@ fetch("http://localhost/AI-Movie-Recommender/server-side/getBookmarksOfUsers.php
         .then(response => response.json())
         .then(data => {
           console.log(data['response']['title'])
-          console.log(data['response']['img'])
+          console.log(data['response']['image_src'])
 
-          const movieElement = document.createElement("div");
-
-          const title = document.createElement("p");
-          title.innerHTML = data['response']['title'];
-
-          const movieImage = document.createElement("img");
-          movieImage.src = data['response']['img'];
-          movieImage.className = "max-width";
-
-
+          const container = document.createElement("div");
+          container.className = "bookmarkContainer"; 
           
-          movieElement.appendChild(movieImage);
-          movieElement.appendChild(title);
+          
+          const movieImage = document.createElement("img");
+          movieImage.src = data['response']['image_src']; 
+          
+          
+          const movieTitle = document.createElement("p");
+          movieTitle.textContent = data['response']['title']; 
+          
+          
+          container.appendChild(movieImage);
+          container.appendChild(movieTitle);
+          
 
-          bookmarkContainer.appendChild(movieElement);
+          bookmarkContainer.appendChild(container);
+          
 
 
         })
