@@ -1,55 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/base/utilities.css" />
     <link rel="stylesheet" href="../styles/movie-details.css" />
-    <link rel="stylesheet" href="../styles/base/utilities.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-    
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="flex row movie-details">
-        <div class="movie-img">
-            <button class="button back-btn" id="back-button"><<< back</button>
-            <img id="img_src1" class="back-img" height="auto" width= "720" />
-            <img id="img_src2" class="front-img"  height="564" width="auto">
+      <div class="movie-img">
+        <button class="button back-btn" id="back-button">
+          <img src="./../assets/icons/back.svg" alt="" />
+        </button>
+        <img id="img_src1" class="back-img" height="auto" width="50%" />
+        <img id="img_src2" class="front-img" height="100%" width="auto" />
+      </div>
+      <div class="flex column about-movie">
+        <div class="flex row top-title">
+          <h1 id="movie-title"></h1>
+          <div class="rating-box">
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
         </div>
-        <div class="flex column about-movie">
-            <div class="flex row top-title">
-                <h1 id="movie-title"></h1>
-                <div class="rating-box">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="middle-title">
-                <div class="flex column genre">
-                    <h2>GENRE</h2>
-                    <p id="movie-genre"></p>
-                </div>
-                <div class="flex column release-year">
-                    <h2>REALEASE YEAR</h2>
-                    <p id="movie-release-year"></p>
-                </div>
-            </div>
-            <div class="flex column movie-details-part">
-                <h2>DETAILS</h2>
-                <p id="movie-description"></p>
-            </div>
-            <div class="flex column btn-container">
-                <button class="button bookmark-btn" id="bookmark">Bookmark</button>
-                
-            </div>
+        <div class="middle-title">
+          <div class="flex column genre">
+            <h2>GENRE</h2>
+            <p id="movie-genre"></p>
+          </div>
+          <div class="flex column release-year">
+            <h2>REALEASE YEAR</h2>
+            <p id="movie-release-year"></p>
+          </div>
         </div>
+        <div class="flex column movie-details-part">
+          <h2>DETAILS</h2>
+          <p id="movie-description"></p>
+        </div>
+        <div class="flex column btn-container">
+          <button class="button bookmark-btn" id="bookmark">Bookmark</button>
+        </div>
+      </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
+      integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="../scripts/details.js"></script>
-</body>
+  </body>
 </html>
