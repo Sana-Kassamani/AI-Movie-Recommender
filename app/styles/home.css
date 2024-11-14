@@ -2,13 +2,12 @@ button {
   padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
-  color: #0D0235;
-  background-color: #FFCE00;
+  color: #0d0235;
+  background-color: #ffce00;
   border: none;
   border-radius: 8px;
   cursor: pointer;
 }
-
 navbar {
   height: 70px;
   justify-content: space-between;
@@ -24,7 +23,7 @@ navbar {
 .selectGenre {
   color: white;
   border: none;
-  background-color: #0D0235;
+  background-color: #0d0235;
 }
 
 a {
@@ -67,7 +66,7 @@ h3 {
 }
 
 .moviesContainer h3 {
-  color: #FFCE00;
+  color: #ffce00;
   font-weight: bold;
 }
 
@@ -85,16 +84,14 @@ h3 {
   background-repeat: no-repeat;
 }
 
-
 .next {
   background-image: url("./../assets/next.png");
   background-position: center;
   background-repeat: no-repeat;
 }
 
-
 .moviesContainer button {
-  background-color: #0D0235;
+  background-color: #0d0235;
   border: none;
   font-size: 1.8rem;
   width: 40px;
@@ -102,17 +99,17 @@ h3 {
   cursor: pointer;
 }
 
-
 footer {
-
+  border-top: 1px solid white;
   padding: 20px;
-  gap: 30px;
+  height: 100px;
+  margin-top: 50px;
 }
 
-.upper-footer {
-  display: flex;
-  gap: 20vw;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+footer > div {
+  height: 100%;
+  gap: 10px;
+}
+footer > div > div {
+  gap: 20px;
 }
