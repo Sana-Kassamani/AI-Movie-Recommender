@@ -31,18 +31,18 @@ function sendMessage() {
     body.append("user_id", 3);
     console.log(userMessage);
 
-
     axios
-      .post("http://localhost/AI-Movie-Recommender/server-side/chatbot.php", body)
+      .post(
+        "http://localhost/AI-Movie-Recommender/server-side/chatbot.php",
+        body
+      )
       .then((response) => {
         console.log(response.data.reply);
         displayApiMessage(response.data.reply);
-
       })
       .catch((error) => {
         console.log("Error fetching data", error);
       });
-
   }
 }
 messageInput.value = "";

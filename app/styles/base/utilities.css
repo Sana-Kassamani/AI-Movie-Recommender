@@ -54,9 +54,11 @@
 h1 {
   font-family: "DroidSans-Bold";
   font-size: 32px;
+  color: white;
 }
 h2 {
   font-family: "DroidSans";
+  color: white;
 }
 button {
   font-family: "DroidSans-Bold";
@@ -73,4 +75,8 @@ button {
 }
 p {
   font-family: "DroidSans";
+  color: white;
+}
+body {
+  background-color: #0d0235;
 }

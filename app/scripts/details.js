@@ -9,7 +9,7 @@ const movieGenre = document.getElementById("movie-genre");
 const movieReleaseYear = document.getElementById("movie-release-year");
 
 const user_id = 1;
-const movie_id = 8;
+const movie_id = 33;
 //const user_id = localStorage.getItem("user_id")
 //const movie_id = localStorage.getItem("movie_id")
 
