@@ -1,3 +1,8 @@
+body {
+  font-family: "DroidSans-Bold";
+
+}
+
 .loginContainer {
   display: flex;
   flex-direction: column;
@@ -8,7 +13,7 @@
   border: 2px solid #FFCE00;
   border-radius: 10px;
   margin-top: 5vh;
-  width: 30vw;
+  width: 25vw;
   min-width: 300px;
   gap: 10px;
 }
@@ -43,8 +48,9 @@ h3 {
 
 
 button {
-  padding: 12px 24px;
+  /* padding: 6px 24px; */
   font-size: 16px;
+  /* height: 30px; */
   font-weight: bold;
   color: #0D0235;
   background-color: #FFCE00;

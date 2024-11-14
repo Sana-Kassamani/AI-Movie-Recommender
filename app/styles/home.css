@@ -1,6 +1,13 @@
+body,
+.selectGenre {
+  font-family: "DroidSans-Bold";
+
+}
+
 button {
-  padding: 12px 24px;
+  /* padding: 6px 24px; */
   font-size: 16px;
+  /* height: 30px; */
   font-weight: bold;
   color: #0d0235;
   background-color: #ffce00;
@@ -8,6 +15,7 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
+
 navbar {
   height: 70px;
   justify-content: space-between;
@@ -37,6 +45,8 @@ section {
 
 h1 {
   font-size: 2rem;
+  font-family: "Monteserrat";
+
 }
 
 h3 {
@@ -106,10 +116,15 @@ footer {
   margin-top: 50px;
 }
 
-footer > div {
+footer>div {
   height: 100%;
   gap: 10px;
 }
-footer > div > div {
+
+footer>div>div {
   gap: 20px;
+}
+
+footer h4 {
+  margin-bottom: 10px;
 }
