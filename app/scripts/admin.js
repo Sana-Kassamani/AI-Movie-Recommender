@@ -2,6 +2,8 @@ const users = document.getElementById("all-users");
 const moviesSection = document.getElementById("all-movies");
 const usersTab = document.getElementById("users-tab");
 const moviesTab = document.getElementById("movies-tab");
+const userNb = document.getElementById("users-nb");
+const moviesNb = document.getElementById("movies-nb");
 
 const toggleBan = (user, isBanned) => {
   let data = new FormData();
@@ -23,6 +25,7 @@ const showAllUsers = () => {
     method: "GET",
   })
     .then((response) => {
+      userNb.innerHTML = response.data.users.length;
       response.data.users.forEach((user) => {
         const div_user = displayUser(user);
         users.appendChild(div_user);
@@ -79,6 +82,7 @@ const showAllMovies = () => {
     }
   )
     .then((response) => {
+      moviesNb.innerHTML = response.data.movies.length;
       console.log(response.data.movies);
       response.data.movies.forEach((movie) => {
         const div_movie = displayMovie(movie);

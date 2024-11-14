@@ -62,12 +62,12 @@ header > div {
   font-size: medium;
   background-color: var(--lightBlue);
 }
-.usersSection > h2,
-.moviesSection > h2 {
+.usersSection h2,
+.moviesSection h2 {
   font-family: "Monteserrat";
   font-weight: 900;
   font-size: 36px;
-  padding-left: 32px;
+  padding: 0px 32px;
   color: var(--primaryColor);
 }
 .moviesSection p {
