@@ -34,10 +34,10 @@ const showAllUsers = () => {
 function displayUser(user) {
   inner_html = `
         <div class="flex user align-center justify-center">
-        <h3>${user.username}</h3>
+        <p>${user.username}</p>
         </div>
         <div class="flex user align-center justify-center">
-        <h3 class="ban-header">${user.banned ? "Banned" : "Approved"}</h3>
+        <p class="ban-header">${user.banned ? "Banned" : "Approved"}</p>
         </div>
         
     `;
@@ -48,10 +48,10 @@ function displayUser(user) {
   const unbanBtn = document.createElement("button");
   banBtn.innerHTML = "Ban";
   unbanBtn.innerHTML = "Unban";
-  banBtn.setAttribute("class", "ban-btn");
+  banBtn.setAttribute("class", "primary-btn");
   banBtn.disabled = user.banned ? true : false;
   unbanBtn.disabled = user.banned ? false : true;
-  unbanBtn.setAttribute("class", "unban-btn");
+  unbanBtn.setAttribute("class", "primary-btn");
   banBtn.addEventListener("click", async () => {
     await toggleBan(user, true); // 2nd parameter: isBanned
     div_user.querySelector(".ban-header").innerHTML = "Banned";

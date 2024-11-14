@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./../styles/base/utilities.css" />
+    <link rel="stylesheet" href="./../styles/base/colors.css" />
     <link rel="stylesheet" href="./../styles/base/base.css" />
     <link rel="stylesheet" href="./../styles/adminPanel.css" />
     <link
@@ -13,19 +14,33 @@
     <title>Admin Panel</title>
   </head>
   <body>
-    <header>
-      <div></div>
-      <div>
+    <header class="flex align-center space-between">
+      <div>MovieMood</div>
+      <div class="flex align-center justify-end">
+        <div class="admin-icon">
+          <img src="./../assets/icons/circle-user-round.svg" alt="" />
+        </div>
+
         <h4>Admin</h4>
       </div>
     </header>
-    <section class="tabs">
+    <section class="tabs flex">
       <button>Users</button>
 
       <button>Movies</button>
     </section>
     <section id="all-users" class="usersSection flex column">
       <h2>Users</h2>
+      <div class="flex user align-center space-around user-titles">
+        <div class="flex user align-center justify-center">
+          <h3>Name</h3>
+        </div>
+        <div class="flex user align-center justify-center">
+          <h3>Status</h3>
+        </div>
+        <div class="space"></div>
+        <div class="space"></div>
+      </div>
     </section>
     <section id="all-movies" class="moviesSection flex column">
       <h2>Movies</h2>

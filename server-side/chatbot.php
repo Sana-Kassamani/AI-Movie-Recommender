@@ -44,7 +44,7 @@ $userMessage = "Tell more about this movie Riddle of Fire?";
 
 // Prepare the request payload
 $data = [
-    "model" => "gpt-4",
+    "model" => "gpt-3.5-turbo",
     "messages" => [
         [
             "role" => "system",

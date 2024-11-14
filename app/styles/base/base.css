@@ -19,3 +19,23 @@
 .stars i.active {
   color: #ff9c1a;
 }
+
+.primary-btn {
+  width: 125px;
+  height: 35px;
+  border-radius: 25px;
+  font-family: "Montserrat";
+  font-weight: 900;
+  font-size: 18px;
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+}
+.primary-btn:hover {
+  opacity: 60%;
+}
+.primary-btn:disabled {
+  background-color: #917607;
+}
+.primary-btn:disabled:hover {
+  opacity: 100%;
+}
