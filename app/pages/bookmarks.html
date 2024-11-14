@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="./../styles/base/utilities.css">
-    <link rel="stylesheet" href="./../styles/bookmarks.css">
-
+    <link rel="stylesheet" href="./../styles/base/utilities.css" />
+    <link rel="stylesheet" href="./../styles/base/colors.css" />
+    <link rel="stylesheet" href="./../styles/bookmarks.css" />
   </head>
   <body>
-    <section id="allMovies" class="containers">
-
-      <div id="bookmarkContainer" class="bookmarkContainer">
+    <header class="flex justify-center align-center">
+      <h2>Bookmarks</h2>
+    </header>
+    <button class="button back-btn" id="back-button">
+      <img src="./../assets/icons/back.svg" alt="" />
+    </button>
+    <section id="allMovies" class="flex space-around containers">
+      <div id="bookmarkContainer" class="images flex space-around">
         <!-- <img id="img_src" />
         <p id="movie-name"></p> -->
       </div>
@@ -16,6 +21,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./../scripts/getBookmark.js"></script>
-
   </body>
 </html>
