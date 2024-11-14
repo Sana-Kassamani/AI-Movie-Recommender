@@ -3,7 +3,7 @@ const bookmarkContainer = document.getElementById("bookmarkContainer");
 
 const formData = new FormData();
 formData.append("user_id", user_id);
-fetch("http://localhost/AI-Movie-Recommender/server-side/getBookmark.php", {
+fetch("http://localhost/AI-Movie-Recommender/server-side/getBookmarksOfUsers.php", {
   method: "POST",
   body: formData
 })
@@ -42,8 +42,9 @@ fetch("http://localhost/AI-Movie-Recommender/server-side/getBookmark.php", {
           movieImage.className = "max-width";
 
 
-          movieElement.appendChild(title);
+          
           movieElement.appendChild(movieImage);
+          movieElement.appendChild(title);
 
           bookmarkContainer.appendChild(movieElement);
 
